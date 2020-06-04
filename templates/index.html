@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>index page</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">welcome to the project</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    <div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+    <div class="container">
+      <form method="post" action="analyze/">{% csrf_token %}
+    <div class="form-group">
+    <label for="input_text">Enter the text here</label>
+<textarea name="text" class="form-control" id="input_text" style="margin-top: 0px; margin-bottom: 0px; height: 180px;"></textarea>
+    </div>
+
+
+<!--        <textarea name='text' style="margin: 0px; width: 1437px; height: 159px;">hi</textarea><br>-->
+        <div class="custom-control custom-switch">
+  <input name="removepunc" type="checkbox" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">removepunc</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input name="extraspaces" type="checkbox" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">extraspaces</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input name="removenewline" type="checkbox" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">removenewline</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input name="capitalize" type="checkbox" class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4">capitalize</label>
+</div>
+        <div class="custom-control custom-switch">
+  <input name="charcount" type="checkbox" class="custom-control-input" id="customSwitch5">
+  <label class="custom-control-label" for="customSwitch5">charcount</label>
+</div>
+
+
+<!--        <input type="checkbox" name="removepunc">removepunc<br>-->
+<!--        <input type="checkbox" name="extraspaces">extraspaces<br>-->
+<!--        <input type="checkbox" name="removenewline">removenewline<br>-->
+<!--        <input type="checkbox" name="capitalize">capitalize<br>-->
+<!--        <input type="checkbox" name="charcount">charcount<br>-->
+<button type="submit" class="btn btn-warning">Analyze text</button>
+    </form>
+                    </div>
+
+</body>
+</html>
